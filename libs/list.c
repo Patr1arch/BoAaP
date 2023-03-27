@@ -34,7 +34,7 @@ int pop(List* list) {
 
 bool find(List* list, int value_find) {
     if (list == NULL || list->head == NULL) {
-        false;
+        return false;
     }
 
     Node* node = list->head;
@@ -62,5 +62,55 @@ void list_print(List* list) {
         node = node->next;
     }
     printf("-------------END OF LIST-------------\n");
+}
+int length (List *list)
+{
+    if((list == NULL) || (list->head == NULL)) return 0;
+    int k = 0;
+    Node *temp = list->head;
+    while (temp != NULL)
+    {
+        k++;
+        temp = temp->next;
+    }
+    return k;
+}
+
+Node* get_last(List* list) {
+    if((list == NULL)||(list->head == NULL)) {
+        return NULL;
+    }
+    Node *temp = list->head;
+    while (temp->next != NULL){
+        temp = temp->next;
+    }
+    return temp;
+}
+Node* get_nth(List* list, int pos){
+    if((list == NULL) || (list->head == NULL) || (pos < 0)){
+        return NULL;
+    }
+    if(pos > length(list))
+}
+void insert(List *list, int pos, int value){
+    if ((pos <= 0) || (list == NULL)) {
+        return;
+    }
+    if (list->head == NULL) {
+       push(list, value);
+       return;
+    }
+
+    Node *tmp = (Node *) malloc (sizeof(Node));
+    tmp->value = value;
+    int len = length(list);
+    if (len < pos)
+    {
+        Node* last = get_last(list);
+        last->next = tmp;
+        tmp->next = NULL;
+        return;
+    }
+    
 }
 
