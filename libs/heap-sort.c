@@ -1,20 +1,4 @@
-int parent(int i) {
-    return i / 2;
-}
-
-int left(int i) {
-    return 2 * i + 1;
-}
-
-int right(int i) {
-    return 2 * i + 2;
-}
-
-void swap(int* a, int* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+#include "heap.c"
 
 void max_heapify(int* arr, int i, int heap_size) {
     int l = left(i);
@@ -45,7 +29,7 @@ void build_max_heap(int* arr, int arr_lenght) {
     }
 }
 
-void heap_sort(int* arr, int arr_lenght) {
+void max_heap_sort(int* arr, int arr_lenght) {
     build_max_heap(arr, arr_lenght);
     int heap_size = arr_lenght;
     for (int i = arr_lenght; i >= 1; i--) {
