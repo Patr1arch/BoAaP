@@ -86,12 +86,13 @@ Node* get_last(List* list) {
     }
     return temp;
 }
-Node* get_nth(List* list, int pos){
-    if((list == NULL) || (list->head == NULL) || (pos < 0)){
-        return NULL;
-    }
-    if(pos > length(list))
-}
+// Node* get_nth(List* list, int pos){
+//     if((list == NULL) || (list->head == NULL) || (pos < 0)){
+//         return NULL;
+//     }
+//     if(pos > length(list)) {}
+// }
+
 void insert(List *list, int pos, int value){
     if ((pos <= 0) || (list == NULL)) {
         return;
